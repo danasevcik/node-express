@@ -6,6 +6,8 @@ const path = require('path')
 const app = express();
 
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'public')));
+//staticly serve the public folder within the current dir
 app.use(adminRoutes);
 app.use(shopRoutes);
 
